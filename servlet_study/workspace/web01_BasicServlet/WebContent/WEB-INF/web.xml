@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>web01_BasicServlet</display-name>
+ 
+ <servlet>
+ <servlet-name>GenericTest1</servlet-name>
+ <servlet-class>basic.step1.GenericTest1</servlet-class>
+ </servlet>
+ 
+ <!-- /web01_BasicServlet/src/basic/step1/GenericTest1.java 
+                         src 이후 경로부터 써준다.. 
+ -->
+ 
+ <servlet-mapping>
+ <servlet-name>GenericTest1</servlet-name>
+  <url-pattern>/TEST1</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+	<servlet-name>GenericTest2</servlet-name>
+	<servlet-class>basic.step2.GenericTest2</servlet-class>
+</servlet>
+
+	<!-- /web01_BasicServlet/src/basic/step1/GenericTest1.java src 이후 경로부터 써준다.. -->
+
+<servlet-mapping>
+	<servlet-name>GenericTest2</servlet-name>
+	<url-pattern>/TEST2</url-pattern>
+</servlet-mapping>
+ 
+ 
+ <servlet>
+	<servlet-name>HttpServletTest3</servlet-name>
+	<servlet-class>basic.step3.HttpServletTest3</servlet-class>
+</servlet>
+
+	<!-- /web01_BasicServlet/src/basic/step1/GenericTest1.java src 이후 경로부터 써준다.. -->
+
+<servlet-mapping>
+	<servlet-name>HttpServletTest3</servlet-name>
+	<url-pattern>/TEST3</url-pattern>
+</servlet-mapping>
+ 
+ 
+  <servlet>
+	<servlet-name>HttpServletTest4</servlet-name>
+	<servlet-class>basic.step4.HttpServletTest4</servlet-class>
+</servlet>
+
+	<!-- /web01_BasicServlet/src/basic/step1/GenericTest1.java src 이후 경로부터 써준다.. -->
+
+<servlet-mapping>
+	<servlet-name>HttpServletTest4</servlet-name>
+	<url-pattern>/TEST4</url-pattern>
+</servlet-mapping>
+ 
+ 
+ 
+ 
+</web-app>

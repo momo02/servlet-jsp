@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #draggable { width: 150px; height: 150px; position: absolute; }
+  </style>
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/jquery-ui.min.js"></script>
+  <script>
+  $( function() {
+	  
+	  $('#draggable').mouseenter(function(){
+		  
+		 // alert("클릭");
+		  
+		  var a = $(this).clone();
+		  $('#outerDiv').append(a);
+		  
+		  $(a).draggable();
+		  
+	  })
+        
+  })
+</script>
+</head>
+<body>
+<div id="outerDiv">
+	<div id="draggable" class="ui-widget-content">
+	  <img src="./img/gom.png"/>
+	</div>
+ </div>
+</body>
+</html>

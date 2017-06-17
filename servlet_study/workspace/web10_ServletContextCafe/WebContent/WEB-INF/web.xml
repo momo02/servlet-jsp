@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<!-- Context param 설정.  
+	
+	context param은 이 프로젝트 내 어디에서도 모두 접근 가능. 
+	init param은 서블릿에 종속되어있음 해당 서블릿안에서만 접근 가능.
+	-->
+	
+	
+	<!-- context 설정 -->
+	<context-param>
+		<param-name>filePath</param-name>
+		<param-value>WEB-INF/member.txt</param-value>
+	</context-param>
+	
+	
+	<!-- 리스너 설정 -->
+	<listener>
+		<listener-class>listener.MyListener</listener-class>
+	</listener>
+	
+	<!-- 서블릿 설정 -->
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+	 	<servlet-class>board.controller.LoginController</servlet-class>
+	 	
+	 	<init-param>
+	 		<param-name>id</param-name>
+	 		<param-value>victory</param-value>
+	 	</init-param>
+	 	
+	 	
+	 	<init-param>
+	 		<param-name>pass</param-name>
+	 		<param-value>victory123</param-value>
+	 	</init-param>
+	 	
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/loginServlet.do</url-pattern> <!-- 앞에 / 꼭 써줄것!! -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>messageServlet</servlet-name>
+	 	<servlet-class>board.controller.MessageController</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>messageServlet</servlet-name>
+		<url-pattern>/messageServlet.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+</web-app>

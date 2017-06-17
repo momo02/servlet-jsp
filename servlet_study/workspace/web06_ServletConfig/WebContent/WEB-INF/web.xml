@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  <!-- ex01 -->
+  <servlet>
+  	<servlet-name>ServletConfig1</servlet-name>
+  	<servlet-class>config.step01.ServletConfig1</servlet-class>
+  
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Park Jung Ha</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>addr</param-name>
+  		<param-value>부천</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>email</param-name>
+  		<param-value>jungha0902@naver.com</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup> 
+  	
+  	<!-- 보통은 url을 호출할때 해당 서블릿 객체를 만들지만
+  	    <load-on-startup>를 사용하면   톰캣이 실행될떄 바로 서블릿 객체를 만들다. 서블릿의 생성자와 init메서드가 호출됨
+  	     생성자 먼저. 그다음 init호출 . 태그사이의 숫자는 객체 생성  순서 이고 순서가 같으면 더 위에있는게 먼저 생성-->
+  </servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServletConfig1</servlet-name>
+		<url-pattern>/SC1</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- ex02 --> <!-- 클래스 하나로 서블릿 객체를 3개 생성한다. -->
+	<servlet>
+		<servlet-name>EnglishGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>Hello</param-value>		
+		</init-param>
+		<load-on-startup>4</load-on-startup> 
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>EnglishGreetServlet2</servlet-name>
+		<url-pattern>/EnGreet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!--  <init-param>에 정의된 파라미터 데이터는 해당 서블릿에서만사용할 수 있다. -->
+		<servlet-name>FrenchGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		
+		<init-param>
+			<param-name>greeting</param-name>
+			<param-value>Bongour</param-value>		
+		</init-param>
+		<load-on-startup>3</load-on-startup> 
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>FrenchGreetServlet2</servlet-name>
+		<url-pattern>/FrGreet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>KoreaGreetServlet2</servlet-name>
+		<servlet-class>config.step02.InternationalGreetServlet2</servlet-class>
+		
+			<init-param>
+			<param-name>greeting</param-name>
+			<param-value>안녕</param-value>		
+		</init-param>
+		<load-on-startup>2</load-on-startup> 
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>KoreaGreetServlet2</servlet-name>
+		<url-pattern>/KrGreet</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
